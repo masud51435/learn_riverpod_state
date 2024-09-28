@@ -22,11 +22,11 @@ class HomeScreen extends ConsumerWidget {
                 builder: (context) => const CartScreen(),
               ),
             ),
-            icon: const Badge(
+            icon: Badge(
               backgroundColor: Colors.red,
               textColor: Colors.white,
-              label: Text('2'),
-              child: Icon(
+              label: Text(cartProduct.length.toString()),
+              child: const Icon(
                 Icons.shopping_bag_outlined,
               ),
             ),
@@ -81,7 +81,7 @@ class HomeScreen extends ConsumerWidget {
                           .read(cartNotifierProvider.notifier)
                           .removeProduct(allProduct[index]);
                     },
-                    child: Text('Remove'),
+                    child: const Text('Remove'),
                   ),
                 if (!cartProduct.contains(allProduct[index]))
                   OutlinedButton(
@@ -90,7 +90,7 @@ class HomeScreen extends ConsumerWidget {
                           .read(cartNotifierProvider.notifier)
                           .addProduct(allProduct[index]);
                     },
-                    child: Text('Add Product'),
+                    child: const Text('Add Product'),
                   ),
               ],
             ),
