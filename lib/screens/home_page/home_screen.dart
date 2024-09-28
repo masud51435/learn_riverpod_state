@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverporlearn/providers/cart_provider.dart';
 import 'package:riverporlearn/providers/products_provider.dart';
 import 'package:riverporlearn/screens/cart/cart_screen.dart';
 
@@ -9,6 +10,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final allProduct = ref.watch(productProvider);
+    final cartProduct = ref.watch(cartNotifierProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Garage sell Product'),
@@ -37,6 +39,7 @@ class HomeScreen extends ConsumerWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,
+          mainAxisExtent: 250,
         ),
         itemCount: allProduct.length,
         itemBuilder: (BuildContext context, int index) {
@@ -70,6 +73,25 @@ class HomeScreen extends ConsumerWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                const SizedBox(height: 10),
+                if (cartProduct.contains(allProduct[index]))
+                  OutlinedButton(
+                    onPressed: () {
+                      ref
+                          .read(cartNotifierProvider.notifier)
+                          .removeProduct(allProduct[index]);
+                    },
+                    child: Text('Remove'),
+                  ),
+                if (!cartProduct.contains(allProduct[index]))
+                  OutlinedButton(
+                    onPressed: () {
+                      ref
+                          .read(cartNotifierProvider.notifier)
+                          .addProduct(allProduct[index]);
+                    },
+                    child: Text('Add Product'),
+                  ),
               ],
             ),
           );
