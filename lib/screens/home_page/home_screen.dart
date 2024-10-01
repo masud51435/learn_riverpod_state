@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverporlearn/providers/cart_provider.dart';
 import 'package:riverporlearn/providers/products_provider.dart';
 import 'package:riverporlearn/screens/cart/cart_screen.dart';
+import 'package:riverporlearn/screens/count/count.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -11,6 +12,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final allProduct = ref.watch(productProvider);
     final cartProduct = ref.watch(cartNotifierProvider);
+    print('page rebuild');
     return Scaffold(
       appBar: AppBar(
         title: const Text('Garage sell Product'),
@@ -31,6 +33,14 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
           ),
+          IconButton(
+              onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Count(),
+                    ),
+                  ),
+              icon: Icon(Icons.add))
         ],
       ),
       body: GridView.builder(

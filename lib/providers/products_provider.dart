@@ -54,9 +54,9 @@ List<Product> allProducts = [
   ),
 ];
 
-final reducedProductProvider = Provider((ref) {
-  return allProducts.where((item) => item.price < 50).toList();
-});
+// final reducedProductProvider = Provider((ref) {
+//   return allProducts.where((item) => item.price < 50).toList();
+// });
 
 @riverpod
 List<Product> product(Ref) {
@@ -67,3 +67,5 @@ List<Product> product(Ref) {
 List<Product> reduceProducts(Ref) {
   return allProducts.where((element) => element.price < 50).toList();
 }
+
+
