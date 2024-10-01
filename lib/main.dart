@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverporlearn/screens/home_page/home_screen.dart';
+import 'package:riverporlearn/screens/todo_page/todo_page.dart';
 
 void main() {
   runApp(
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const TodoPage(),
     );
   }
 }
