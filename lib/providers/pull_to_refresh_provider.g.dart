@@ -6,7 +6,7 @@ part of 'pull_to_refresh_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$refreshActivityHash() => r'7a84444105b822b378c3f6f37d8afd06d0d4d0c7';
+String _$refreshActivityHash() => r'fec1d0c6af5fe33b913367626b9252aeefd99366';
 
 /// See also [refreshActivity].
 @ProviderFor(refreshActivity)

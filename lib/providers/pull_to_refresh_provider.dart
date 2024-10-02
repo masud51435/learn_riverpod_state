@@ -7,7 +7,7 @@ import '../model/pull_to_refresh_model.dart';
 part 'pull_to_refresh_provider.g.dart';
 
 @riverpod
-FutureOr<PullToRefreshModel> refreshActivity(RefreshActivityRef ref) async {
+Future<PullToRefreshModel> refreshActivity(RefreshActivityRef ref) async {
   final response = await http.get(
     Uri.https('www.boredapi.com', '/api/activity'),
   );
