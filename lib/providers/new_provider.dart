@@ -17,6 +17,8 @@ hello(ref) {
   return 'hello world';
 }
 
+
+// i use here class method so it will create a NotifierProvider
 @riverpod
 class Counter extends _$Counter {
   @override
