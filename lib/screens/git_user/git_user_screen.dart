@@ -4,6 +4,8 @@ import '../../model/git_user_model.dart';
 import '../../providers/git_user_provider.dart';
 
 class GitUserScreen extends ConsumerWidget {
+  const GitUserScreen({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // Fetch the data from gitUser provider, which returns AsyncValue<List<GitUserModel>>

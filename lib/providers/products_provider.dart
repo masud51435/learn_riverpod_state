@@ -59,12 +59,12 @@ List<Product> allProducts = [
 // });
 
 @riverpod
-List<Product> product(Ref) {
+List<Product> product(Ref ref) {
   return allProducts;
 }
 
 @riverpod
-List<Product> reduceProducts(Ref) {
+List<Product> reduceProducts(Ref ref) {
   return allProducts.where((element) => element.price < 50).toList();
 }
 

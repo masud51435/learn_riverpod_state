@@ -34,4 +34,4 @@ int cartTotal(ref) {
     total += product.price;
   }
   return total;
-}
+} 
